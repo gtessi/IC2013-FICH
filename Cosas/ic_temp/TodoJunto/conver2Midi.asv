@@ -1,0 +1,18 @@
+
+clear all;
+close all;
+clc;
+
+cancion=[];
+
+% Leemos el archivo
+csvread('cancion.csv',cancion);
+
+% normaliza la matriz a formato midi
+midi_data=matrix2midi(cancion);
+
+% nombre del archivo midi
+nom='salidaMidi.mid';
+
+% crea el archivo midi
+writemidi(midi_data,nom);

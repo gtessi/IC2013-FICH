@@ -1,0 +1,13 @@
+Los tiempos de inicio y final de cada nota no pueden ser manipulados en forma aleatoria, deberían ser conservados luego del preproceso del archivo midi.
+
+Considerar formar el patrón de entrada para los datos nota, t_inicial, t_final; cada tipo de dato sería un tipo de patrón y se introduciría a una red (cada tipo de dato es independiente, por lo tanto deben ser procesados por diferentes redes).
+
+Considerar tomar de a tres o cuatro patrones para la red, reconstruirlos y descartar dos o tres de ellos.
+
+El archivo de salida de la red debe tener los patrones reconstruidos.
+
+El preproceso desarma el midi y toma los patrones que necesitamos.
+
+El postproceso rearma el midi a partir de los patrones afectados por la red neuronal.
+
+Esta metodología evita el uso de ventanas temporales, ya que cada patrón tiene independencia temporal, y los solapamientos no se ven afectados debido a que se mantienen los tiempos de cada nota.
